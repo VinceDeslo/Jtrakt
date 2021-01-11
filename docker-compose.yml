@@ -2,8 +2,8 @@ version: '3'
 
 services:
   backend:
-    build: './auth'
+    build: './backend'
   frontend:
-    build: './billing'
+    build: './frontend'
   data:
-    build: './contact'
+    build: './data'
