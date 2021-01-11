@@ -1,9 +1,11 @@
 version: '3'
 
 services:
-  backend:
-    build: './backend'
   frontend:
-    build: './frontend'
-  data:
-    build: './data'
+    build: './frontend-service'
+  gateway:
+    build: './api-gateway'
+  job-api:
+    build: './job-api-service'
+  job-data:
+    build: './job-data-service'
