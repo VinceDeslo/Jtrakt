@@ -4,7 +4,22 @@
 <br/>
 
 ### Status
-This project is currently a work in progress
+This project is currently a work in progress (planning phase)
 
 ### Description
 A small web app for tracking a users job applications
+
+### Objectives
+- [ ] React frontend basic structuring (TS)
+    - [ ] Authentication form and flow (Github OAuth)
+    - [ ] User Dashboard 
+    - [ ] Navigation
+    - [ ] Data population
+    - [ ] Data editing forms
+    - [ ] Styling
+- [ ] Write an API gateway (Go)
+    - [ ] Define encapsulation format
+    - [ ] Implement a command pattern 
+- [ ] Implement a job info Rest API (Go)
+- [ ] Set up a job info database service (Mongo)
+
