@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  backend:
+    build: './auth'
+  frontend:
+    build: './billing'
+  data:
+    build: './contact'
