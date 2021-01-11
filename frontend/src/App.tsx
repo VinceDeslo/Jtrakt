@@ -1,9 +1,10 @@
 import React from 'react';
+import { Button } from "@material-ui/core"
 
 function App() {
   return (
     <div className="App">
-      <h1>Howdy</h1>
+      <Button variant="outlined">Howdy</Button>
     </div>
   );
 }
