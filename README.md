@@ -22,4 +22,5 @@ A small web app for tracking a users job applications
     - [ ] Implement a command pattern 
 - [ ] Implement a job info Rest API (Go)
 - [ ] Set up a job info database service (Mongo)
+- [ ] Set up a logo fetching service (using Clearbit)
 
