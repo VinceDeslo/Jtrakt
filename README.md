@@ -1,7 +1,10 @@
 <div style="text-align:center">
-    <img src="frontend/public/images/brand.png">
+    <img src="frontend/public/images/brand.png" width="500" height="169">
 </div>
+<br/>
 
-Currently a WIP:
+### Status
+This project is currently a work in progress
 
-A small React web app for monitoring a personnal job application list.
+### Description
+A small web app for tracking a users job applications
