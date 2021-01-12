@@ -1,10 +1,13 @@
 import React from 'react';
-import { Button } from "@material-ui/core"
+import { Button } from "@material-ui/core";
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar'
 
 function App() {
   return (
     <div className="App">
-      <Button variant="outlined">Howdy</Button>
+      <Navbar/>
+      <Sidebar/>
     </div>
   );
 }
