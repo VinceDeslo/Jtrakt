@@ -14,6 +14,7 @@ export const useNavbarStyles = makeStyles((theme:Theme) => ({
     },
     companyName: {
         flex: 1,
+        margin: theme.spacing(2),
     },
     authButton: {
 
