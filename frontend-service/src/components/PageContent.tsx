@@ -1,5 +1,10 @@
 import React from 'react';
 import { useContentStyles } from '../styles/content-styles';
+import { Route } from 'react-router-dom';
+import { routes } from '../routing/routes';
+import Applications from './Applications';
+import Favorites from './Favorites';
+import Settings from './Settings';
 
 function PageContent() {
 
@@ -7,7 +12,9 @@ function PageContent() {
 
     return(
         <div className={style.contentRoot}>
-            <h1>PageContent</h1>
+            <Route exact path={routes.applications} component={Applications}/>
+            <Route path={routes.favorites} component={Favorites}/>
+            <Route path={routes.settings} component={Settings}/>
         </div>
     );
 }

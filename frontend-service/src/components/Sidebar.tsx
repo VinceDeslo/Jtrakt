@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import { Drawer, Divider, List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { MdNavigateBefore, MdNavigateNext, MdSettings, MdFolderShared, MdStar } from "react-icons/md";
 import { useSidebarStyles } from '../styles/sidebar-styles';
+import { NavLink } from 'react-router-dom';
+import { routes } from '../routing/routes';
 
 function Sidebar() {
 
@@ -42,18 +44,27 @@ function Sidebar() {
                             </ListItemIcon>
                         </ListItem>
                         <Divider />
-                        <ListItem button>
-                            <ListItemIcon><MdFolderShared/></ListItemIcon>
-                            <ListItemText>Applications</ListItemText> 
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemIcon><MdStar/></ListItemIcon>
-                            <ListItemText>Favorites</ListItemText> 
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemIcon><MdSettings/></ListItemIcon>
-                            <ListItemText>Settings</ListItemText> 
-                        </ListItem>
+                        
+                        <NavLink to={routes.applications}>
+                            <ListItem button>
+                                <ListItemIcon><MdFolderShared/></ListItemIcon>
+                                <ListItemText>Applications</ListItemText>
+                            </ListItem>
+                        </NavLink>
+                        
+                        <NavLink to={routes.favorites}>
+                            <ListItem button>
+                                <ListItemIcon><MdStar/></ListItemIcon>
+                                <ListItemText>Favorites</ListItemText> 
+                            </ListItem>
+                        </NavLink>
+
+                        <NavLink to={routes.settings}>
+                            <ListItem button>
+                                <ListItemIcon><MdSettings/></ListItemIcon>
+                                <ListItemText>Settings</ListItemText> 
+                            </ListItem>
+                        </NavLink>
                     </List>
                 </div>
             </Drawer>
