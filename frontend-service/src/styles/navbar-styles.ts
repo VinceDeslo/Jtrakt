@@ -2,7 +2,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 
 export const useNavbarStyles = makeStyles((theme:Theme) => ({
 
-    root:{
+    navBarRoot:{
         flexgrow: 1,
     },
     navBar: {

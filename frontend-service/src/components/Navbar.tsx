@@ -7,7 +7,7 @@ function Navbar() {
     const style = useNavbarStyles();
 
     return (
-        <div className={style.root}>
+        <div className={style.navBarRoot}>
             <AppBar 
             className={style.navBar} 
             position="fixed">

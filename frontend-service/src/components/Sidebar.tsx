@@ -20,7 +20,7 @@ function Sidebar() {
 
     // Sidebar component tree
     return(
-        <div className={style.root}>
+        <div className={style.sideBarRoot}>
             <Drawer
             className={clsx(style.drawer, {
                 [style.drawerOpen]: open,
