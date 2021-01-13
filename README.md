@@ -12,10 +12,10 @@ A small web app for tracking a users job applications
 ### Objectives
 - [ ] React frontend basic structuring (TS)
     - [ ] Authentication form and flow (Github OAuth)
-    - [ ] User Dashboard 
-    - [ ] Navigation
-    - [ ] Data population
-    - [ ] Data editing forms
+    - [x] Dashboard UI structure
+    - [ ] Navigation and Routing
+    - [ ] Content population
+    - [ ] Content editing forms
     - [ ] Styling
 - [ ] Write an API gateway (Go)
     - [ ] Define encapsulation format
