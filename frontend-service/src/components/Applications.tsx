@@ -7,6 +7,8 @@ function Applications() {
 
     const style = useApplicationsStyle();
 
+    const jobs = fetchJobInfo();
+
     return(
         <Container className={style.applicationsRoot}>
             <Typography>Applications</Typography>
