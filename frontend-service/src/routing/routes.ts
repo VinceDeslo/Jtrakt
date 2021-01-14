@@ -1,5 +1,6 @@
 export const routes = {
     applications: "/",
     favorites: "/favorites",
-    settings: "/settings"
+    settings: "/settings",
+    jobApiUrl: "https://localhost:XXXXX"
 }
