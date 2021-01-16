@@ -34,3 +34,8 @@ export enum jobStatus {
     Refused = 'REFUSED',
     Ghosted = 'GHOSTED',
 }
+
+// Provide a map of enum values and active state
+export const jobStatusMap = Object.keys(jobStatus).map(k => 
+
+    ({status: jobStatus[k as keyof typeof jobStatus], active: false}));
