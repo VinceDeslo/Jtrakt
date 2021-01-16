@@ -19,7 +19,8 @@ export interface jobInfo {
     dateAdded: string,
     status: string,
     contact: string,
-
+    description: string,
+    favorite: boolean,
     [ key: string ]: any,
 }
 
@@ -29,4 +30,7 @@ export enum jobStatus {
     Applied = 'APPLIED',
     Interview = 'INTERVIEW',
     Technical = 'TECHNICAL',
+    Failed = 'FAILED',
+    Refused = 'REFUSED',
+    Ghosted = 'GHOSTED',
 }
