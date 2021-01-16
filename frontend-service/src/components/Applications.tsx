@@ -1,5 +1,10 @@
-import React from 'react';
-import { Container, List, ListItem, Typography } from "@material-ui/core";
+import React, {useState} from 'react';
+import { Container, List, ListItem, Toolbar, Typography } from "@material-ui/core";
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import MomentUtils from '@date-io/moment';
+import moment from 'moment';
+import { Moment } from 'moment';
+
 import { useApplicationsStyle } from '../styles/applications-styles';
 import { fetchJobInfo } from '../data/jobData';
 
@@ -30,9 +35,28 @@ function Applications() {
         favorite: false,}
     ]
 
+    const [date, setDate] = useState<Moment | null>(
+        moment('2016-01-01')
+    );
+
     return(
         <Container className={style.applicationsRoot}>
             <Typography>Applications</Typography>
+            <Toolbar>
+                <MuiPickersUtilsProvider utils={MomentUtils}>
+                <KeyboardDatePicker
+                    margin="normal"
+                    id="date-picker-dialog"
+                    label="As of:"
+                    format="MM/dd/yyyy"
+                    value={date}
+                    onChange={newDate => setDate(newDate)}
+                    KeyboardButtonProps={{
+                    'aria-label': 'change date',
+                    }}
+                />
+                </MuiPickersUtilsProvider>
+            </Toolbar>
             <List>
                 {jobs.map((job, i)=> (
                   <ListItem key={i}>{JSON.stringify(job)}</ListItem>
