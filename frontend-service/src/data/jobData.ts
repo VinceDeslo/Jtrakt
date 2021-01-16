@@ -5,8 +5,28 @@ import { routes } from '../routing/routes';
 export const fetchJobInfo = async () => {
         
     const [jobs] = await Promise.all([
-        axios.get(routes.applications),
+        axios.get<jobInfo[]>(routes.applications),
     ])
 
     return jobs;
+}
+
+// Expected data format
+export interface jobInfo {
+    jobId: number,
+    position: string,
+    company: string,
+    dateAdded: string,
+    status: string,
+    contact: string,
+
+    [ key: string ]: any,
+}
+
+// Status enum for application routing
+export enum jobStatus {
+    Prospect = 'PROSPECT',
+    Applied = 'APPLIED',
+    Interview = 'INTERVIEW',
+    Technical = 'TECHNICAL',
 }

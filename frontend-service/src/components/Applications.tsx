@@ -18,7 +18,6 @@ function Applications() {
                 ))} */}
             </List>
         </Container>
-        
     );
 }
 
