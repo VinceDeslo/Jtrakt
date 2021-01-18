@@ -26,6 +26,7 @@ export interface jobInfo {
 
 // Status enum for application routing
 export enum jobStatus {
+    All = 'ALL',
     Prospect = 'PROSPECT',
     Applied = 'APPLIED',
     Interview = 'INTERVIEW',
@@ -35,18 +36,7 @@ export enum jobStatus {
     Ghosted = 'GHOSTED',
 }
 
-// Filter for applying to the job status
-export const jobStatusFilterItems = [
-    {status: jobStatus.Prospect, active: false},
-    {status: jobStatus.Applied, active: false},
-    {status: jobStatus.Interview, active: false},
-    {status: jobStatus.Technical, active: false},
-    {status: jobStatus.Failed, active: false},
-    {status: jobStatus.Refused, active: false},
-    {status: jobStatus.Ghosted, active: false},
-]
-
 // Provide a map of enum values and active state
-// export const jobStatusMap = Object.keys(jobStatus).map(k => 
-//     ({status: jobStatus[k as keyof typeof jobStatus], active: false})
-// );
+export const jobStatusValues = Object.values(jobStatus).filter((item)=>{
+    if(typeof item === 'string') return item;
+});

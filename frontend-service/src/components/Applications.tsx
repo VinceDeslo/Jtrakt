@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import { Button, Container, Checkbox, Input, MenuItem, List, ListItem, ListItemText, Select, Toolbar, Typography } from "@material-ui/core";
+import { Container, Input, InputLabel, MenuItem, List, ListItem, Select, Toolbar, Typography, FormControl } from "@material-ui/core";
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 import moment from 'moment';
 import { Moment } from 'moment';
 
 import { useApplicationsStyle } from '../styles/applications-styles';
-import { fetchJobInfo, jobStatusFilterItems } from '../data/jobData';
+import { fetchJobInfo, jobStatus, jobStatusValues } from '../data/jobData';
 
 function Applications() {
 
@@ -29,7 +29,7 @@ function Applications() {
         position: 'senior dev',
         company: 'apple',
         dateAdded: '2021-01-22',
-        status: 'APPLIED',
+        status: 'GHOSTED',
         contact: 'stranger@recruiting.com',
         description: 'some better software stuff',
         favorite: false,}
@@ -41,12 +41,7 @@ function Applications() {
     );
 
     // Job filter state variable
-    const [jobStatus, setStatus] = useState(jobStatusFilterItems);
-
-    // Job state variable handler
-    const handleStatusChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        
-    } 
+    const [selectedStatus, setSelectedStatus] = useState<string>(jobStatus.Applied);
 
     return(
         <Container className={style.applicationsRoot}>
@@ -64,31 +59,29 @@ function Applications() {
                     'aria-label': 'change date',
                     }}
                 />
+                </MuiPickersUtilsProvider>
+                <FormControl>
+                    <InputLabel id="job-status-label">Status</InputLabel>
                 <Select
-                    label="Job Status"
-                    labelId="Job Status"
+                    labelId="job-status-label"
                     id="job-status-dialog"
-                    //multiple
-                    value={jobStatus}
-                    onChange={handleStatusChange}
-                    input={<Input />}
-                    //renderValue={(selected) => (selected as string[]).join(', ')}
+                    value={selectedStatus? selectedStatus: ""}
+                    onChange={e=>setSelectedStatus(e.target.value as string)}
+                    input={<Input/>}
                 >{
-                    jobStatus.map((job) =>
-                        <MenuItem>
-                            <Checkbox checked={job.active} />
-                            <ListItemText primary={job.status} />
-                        </MenuItem>
+                    jobStatusValues.map((item: string) =>
+                        <MenuItem value={item}>{item}</MenuItem>
                     )
                 }
                 </Select>
-                </MuiPickersUtilsProvider>
+                </FormControl>
             </Toolbar>
             <List>
                 {jobs.map((job, i)=> (
                   <ListItem key={i}>{JSON.stringify(job)}</ListItem>
                 ))}
             </List>
+            <Typography>{selectedStatus}</Typography>
         </Container>
     );
 }
