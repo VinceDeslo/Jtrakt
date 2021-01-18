@@ -6,7 +6,7 @@ import moment from 'moment';
 import { Moment } from 'moment';
 
 import { useApplicationsStyle } from '../styles/applications-styles';
-import { fetchJobInfo, jobStatusMap } from '../data/jobData';
+import { fetchJobInfo, jobStatusFilterItems } from '../data/jobData';
 
 function Applications() {
 
@@ -41,12 +41,11 @@ function Applications() {
     );
 
     // Job filter state variable
-    const [jobStatus, setStatus] = useState<typeof jobStatusMap>(jobStatusMap);
+    const [jobStatus, setStatus] = useState(jobStatusFilterItems);
 
     // Job state variable handler
     const handleStatusChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-
-        setStatus(event.target.value as typeof jobStatusMap)
+        
     } 
 
     return(
@@ -66,16 +65,16 @@ function Applications() {
                     }}
                 />
                 <Select
-                    label="Job Status:"
+                    label="Job Status"
                     labelId="Job Status"
                     id="job-status-dialog"
-                    multiple
+                    //multiple
                     value={jobStatus}
                     onChange={handleStatusChange}
                     input={<Input />}
-                    //renderValue={}
+                    //renderValue={(selected) => (selected as string[]).join(', ')}
                 >{
-                    jobStatusMap.map((job) =>
+                    jobStatus.map((job) =>
                         <MenuItem>
                             <Checkbox checked={job.active} />
                             <ListItemText primary={job.status} />
