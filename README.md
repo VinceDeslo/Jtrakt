@@ -4,7 +4,7 @@
 <br/>
 
 ### Status
-This project is currently a work in progress (planning phase)
+:construction: This project is currently a work in progress :construction:
 
 ### Description
 A small web app for tracking a users job applications
